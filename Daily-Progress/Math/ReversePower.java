@@ -21,14 +21,15 @@ public class ReversePower {
         // return result;
 
         while(power>0){
-            if((power & 1) == 1) //power % 2 != 0
-                result = result * base;
+            if((power & 1) == 1){//power % 2 != 0
+                result = result * base; 
+                power = power -1; 
+            }   
             base = base * base;
             power >>= 1; //power = power / 2
         }
-        System.out.println(base);
-        System.out.println(result);
-        return result;
+
+        return result ;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -3,19 +3,29 @@ import java.util.Scanner;
 public class PerfectNum {
 
     static public boolean perfectNum(int n){
-        int sum = 0, original = n;
-        for(int i=1; i<n; i++){
-            if(n%i == 0){
-                sum = sum + i;
+        if(n == 1) return false;
+        
+        int sum = 1;
+        for(int i = 2; i * i <= n; i++){
+            if(n % i == 0){
+                sum += i;
+                if(i != n / i)
+                    sum += n / i;
             }
         }
-        System.out.println(sum);
-        System.out.println(original);
-        return original == sum ? true : false;
+
+        return sum == n;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Number: ");
-        perfectNum(sc.nextInt());
+
+        System.out.print("Enter the Number: ");
+        int num = sc.nextInt();
+
+        if(perfectNum(num))
+            System.out.println(num + " is a Perfect Number");
+        else
+            System.out.println(num + " is NOT a Perfect Number");
     }
 }
