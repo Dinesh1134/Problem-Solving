@@ -25,7 +25,8 @@ public class CheckSort {
 
     
     public static void main(String[] args) {
-        int arr[] = {2,4,4,6,8,8};
+        int arr[] = {2,4,9,6,8,8};
         System.out.println(removeDupArray(arr));
+        System.out.println(sortArray(arr));
     }
 }
