@@ -23,10 +23,21 @@ public class CheckSort {
             return i+1;
     }
 
+    public static boolean checkSortWithRotate(int arr[]){
+        int n = arr.length,count=0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>arr[(i+1)%n]){
+                count++;
+            }
+            if(count > 1) return false;
+        }
+        return true;
+    }
     
     public static void main(String[] args) {
-        int arr[] = {2,4,9,6,8,8};
+        int arr[] = {2,1,3,4};
         System.out.println(removeDupArray(arr));
         System.out.println(sortArray(arr));
+        System.out.println(checkSortWithRotate(arr));
     }
 }
